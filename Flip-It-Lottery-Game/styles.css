@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  background: radial-gradient(#0febcd, #671fee);
+}
+
+.page-title {
+  color: #fffb00;
+  font-family: sans-serif;;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.instruction-title {
+  color: #fffb00;
+  font-family: sans-serif;;
+  font-weight: normal;
+  text-align: center;
+  font-size: 3em;
+}
+
+.game-layout {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 500px;
+}
+
+.card {
+  position: relative;
+  height: 175px;
+  width: 125px;
+}
+
+.card-face {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+  backface-visibility: hidden;
+}
+.card.visible .card-overturn {
+  transform: rotateY(-180deg); 
+}
+.card.visible .card-front {
+  transform: rotateY(0); 
+}
+
+
+.image-size {
+  position: absolute;
+  transition: width 100ms ease-in-out, height 100ms ease-in-out;
+  width: 47px;
+  height: 47px;
+}
+
+.back-card-size {
+  width: 125px;
+  height: 175px;
+}
+
+
+.card-value {
+  position: relative;
+  transition: transform 100ms ease-in-out;
+  transform: scale(.9);
+}
+
+.card-front {
+  background-color: #f8c5a1;
+  border-color: #333;
+  transform: rotateY(180deg);
+}
